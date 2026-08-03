@@ -6,7 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
 
 
-#criar classe
+
 
 class Drink(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -24,5 +24,11 @@ def index():
 
 @app.route('/drinks')
 def get_drinks():
+    drinks = Drink.query.all()
 
-    return {"drinks": "drink data"} #está funcionando, porém temos que conectar com uma base de dados
+    output = []
+    for drink in drinks:
+        drink_data = {'name': drink.name, 'description': drink.description}
+        output.append(drink_data)
+
+    return {'drinks': output}
