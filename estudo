@@ -1,0 +1,29 @@
+API - aplication progamming interface
+--> um meio de dois sistemas diferentes se comunicarem
+. o cliente consume do servidor
+. para API usa-se JSON
+# JSON é so um dicionario para ajudar python
+
+API endpoints: o que vc quer pegar do sistemas
+REST API - meios de comuicação
+rest = comunicação na WEB - fazendo request de JSON
+. cada endpoint tem como pegar (GET) a info
+
+. Não se vai do front end pro data base direto porque não é seguro!!
+. Se coloca as informações no back end para ficar mais seguro
+. Os endpoints serve para separas as infos para quem quer ver
+. É mais versátil pois a API pode trabalhar com vários front ends (compartilha o mesmo back end)
+. Mais livre para mudar o back end e o front end
+. Posso tornar certos endpoint públicos para todos consumirem a API
+
+METODO HTTP
+
+GET --> usa para pegar informação do servidor
+POST --> usa para escrever informação (nova informação)
+DELETE --> deletar as informações
+PUT --> atualizar informação
+
+CRUD --> Create Read Update Delete
+
+o post adicionaria uma informação, não se sabe o <id>
+o put tem que procurar a info q quer ser trocado, precisa saber a posição (<id>) para ser trocado, necessitando de um segundo endpoint
